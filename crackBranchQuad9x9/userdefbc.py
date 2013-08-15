@@ -3,7 +3,7 @@ from math import acos
 from math import pi
 from math import sin
 from math import cos
-def giveUserDefBC(iX, iY, iZ, iDofNum):
+def giveUserDefBC(iCoords, iDofNum):
 # Apply the analytical solution of a cracked plate subject to mode I loading.
 
 # Material and loading parameters
@@ -22,7 +22,7 @@ def giveUserDefBC(iX, iY, iZ, iDofNum):
 
 	n = [0.0, 1.0]
 
-	xN = [iX, iY]
+	xN = [iCoords[0], iCoords[1]]
 	q = [xN[0] - xTip[0],xN[1] - xTip[1]]
 	l = sqrt(q[0]*q[0]+q[1]*q[1])
 	q[0] = q[0]/l
