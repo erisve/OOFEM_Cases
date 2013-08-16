@@ -5,6 +5,10 @@ XFEM simulation of a plate with edge crack.
 # The case setup was adopted from the XFEM summer course in 
 # Luxembourg 2013 taught by prof. Fries and prof. Zilian.
 # See http://ces.gforge.uni.lu/download/ for a Matlab version.
+#
+# Copyright (c) 2013, Erik Svenning, Chalmers University of Technology
+# 
+#
 NonLinearStatic nsteps 1 deltat 1.0 controlmode 1 rtolv 1.0e-6 MaxIter 20 minIter 2 stiffmode 0 lstype 3 smtype 7 nmodules 1
 vtkxml tstep_all domain_all vars 1 94 primvars 1 1 cellvars 3 1 92 93
 domain 2dPlaneStress
