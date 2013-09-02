@@ -3,7 +3,7 @@ from math import acos
 from math import pi
 from math import sin
 from math import cos
-def giveUserDefBC(iCoords, iDofNum):
+def giveUserDefBC(iCoords, iDofNum, iTime):
 # Apply the analytical solution of a cracked plate subject to mode I loading.
 
 # Material and loading parameters
