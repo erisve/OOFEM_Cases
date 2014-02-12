@@ -1,0 +1,265 @@
+test.out
+Test of prescribed gradient bc. Written by Erik Svenning, Chalmers University of Technology, February 2014
+#
+#   This file shows an example on how to use the PrescribedGradient boundary condition.
+#   The example consists of a unit square RVE subjected to shear.
+#
+#   The homogenized stresses are exported to PrescribedGradientGnuplotMeanStress1Time0.dat,
+#   where they are stored in the order (sigma_xx sigma_yy sigma_xy sigma_yx).
+#
+#   The total reaction force on the boundary is exported to ReactionForceGnuplotBC1*.
+#   As expected the forces, sum up to zero in both x- and y-direction.
+#
+# 	Copyright (c) 2013, Erik Svenning, Chalmers University of Technology
+#
+#   This library is free software; you can redistribute it and/or
+#   modify it under the terms of the GNU Lesser General Public
+#   License as published by the Free Software Foundation; either
+#   version 2.1 of the License, or (at your option) any later version.
+#
+#   This library is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#   Lesser General Public License for more details.
+#
+#   You should have received a copy of the GNU Lesser General Public
+#   License along with this library; if not, write to the Free Software
+#   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+# 
+#
+XFEMStatic nsteps 1 deltat 1.0 controlmode 1 rtolv 1.0e-6 MaxIter 40 minIter 2 stiffmode 0 nmodules 2 manrmsteps 1 forceremap 0
+vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1
+gnuplot tstep_all reactionforces boundaryconditions
+domain 2dPlaneStress
+OutputManager tstep_all dofman_all element_all
+ndofman 121 nelem 100 ncrosssect 1 nmat 1 nbc 1 nic 0 nltf 1 nset 1 nxfemman 1
+node 1     coords 3  0        0        0       
+node 2     coords 3  1        0        0       
+node 3     coords 3  1        1        0       
+node 4     coords 3  0        1        0       
+node 5     coords 3  0.1      0        0       
+node 6     coords 3  0.2      0        0       
+node 7     coords 3  0.3      0        0       
+node 8     coords 3  0.4      0        0       
+node 9     coords 3  0.5      0        0       
+node 10    coords 3  0.6      0        0       
+node 11    coords 3  0.7      0        0       
+node 12    coords 3  0.8      0        0       
+node 13    coords 3  0.9      0        0       
+node 14    coords 3  1        0.1      0       
+node 15    coords 3  1        0.2      0       
+node 16    coords 3  1        0.3      0       
+node 17    coords 3  1        0.4      0       
+node 18    coords 3  1        0.5      0       
+node 19    coords 3  1        0.6      0       
+node 20    coords 3  1        0.7      0       
+node 21    coords 3  1        0.8      0       
+node 22    coords 3  1        0.9      0       
+node 23    coords 3  0.9      1        0       
+node 24    coords 3  0.8      1        0       
+node 25    coords 3  0.7      1        0       
+node 26    coords 3  0.6      1        0       
+node 27    coords 3  0.5      1        0       
+node 28    coords 3  0.4      1        0       
+node 29    coords 3  0.3      1        0       
+node 30    coords 3  0.2      1        0       
+node 31    coords 3  0.1      1        0       
+node 32    coords 3  0        0.9      0       
+node 33    coords 3  0        0.8      0       
+node 34    coords 3  0        0.7      0       
+node 35    coords 3  0        0.6      0       
+node 36    coords 3  0        0.5      0       
+node 37    coords 3  0        0.4      0       
+node 38    coords 3  0        0.3      0       
+node 39    coords 3  0        0.2      0       
+node 40    coords 3  0        0.1      0       
+node 41    coords 3  0.9      0.1      0       
+node 42    coords 3  0.9      0.2      0       
+node 43    coords 3  0.9      0.3      0       
+node 44    coords 3  0.9      0.4      0       
+node 45    coords 3  0.9      0.5      0       
+node 46    coords 3  0.9      0.6      0       
+node 47    coords 3  0.9      0.7      0       
+node 48    coords 3  0.9      0.8      0       
+node 49    coords 3  0.9      0.9      0       
+node 50    coords 3  0.8      0.1      0       
+node 51    coords 3  0.8      0.2      0       
+node 52    coords 3  0.8      0.3      0       
+node 53    coords 3  0.8      0.4      0       
+node 54    coords 3  0.8      0.5      0       
+node 55    coords 3  0.8      0.6      0       
+node 56    coords 3  0.8      0.7      0       
+node 57    coords 3  0.8      0.8      0       
+node 58    coords 3  0.8      0.9      0       
+node 59    coords 3  0.7      0.1      0       
+node 60    coords 3  0.7      0.2      0       
+node 61    coords 3  0.7      0.3      0       
+node 62    coords 3  0.7      0.4      0       
+node 63    coords 3  0.7      0.5      0       
+node 64    coords 3  0.7      0.6      0       
+node 65    coords 3  0.7      0.7      0       
+node 66    coords 3  0.7      0.8      0       
+node 67    coords 3  0.7      0.9      0       
+node 68    coords 3  0.6      0.1      0       
+node 69    coords 3  0.6      0.2      0       
+node 70    coords 3  0.6      0.3      0       
+node 71    coords 3  0.6      0.4      0       
+node 72    coords 3  0.6      0.5      0       
+node 73    coords 3  0.6      0.6      0       
+node 74    coords 3  0.6      0.7      0       
+node 75    coords 3  0.6      0.8      0       
+node 76    coords 3  0.6      0.9      0       
+node 77    coords 3  0.5      0.1      0       
+node 78    coords 3  0.5      0.2      0       
+node 79    coords 3  0.5      0.3      0       
+node 80    coords 3  0.5      0.4      0       
+node 81    coords 3  0.5      0.5      0       
+node 82    coords 3  0.5      0.6      0       
+node 83    coords 3  0.5      0.7      0       
+node 84    coords 3  0.5      0.8      0       
+node 85    coords 3  0.5      0.9      0       
+node 86    coords 3  0.4      0.1      0       
+node 87    coords 3  0.4      0.2      0       
+node 88    coords 3  0.4      0.3      0       
+node 89    coords 3  0.4      0.4      0       
+node 90    coords 3  0.4      0.5      0       
+node 91    coords 3  0.4      0.6      0       
+node 92    coords 3  0.4      0.7      0       
+node 93    coords 3  0.4      0.8      0       
+node 94    coords 3  0.4      0.9      0       
+node 95    coords 3  0.3      0.1      0       
+node 96    coords 3  0.3      0.2      0       
+node 97    coords 3  0.3      0.3      0       
+node 98    coords 3  0.3      0.4      0       
+node 99    coords 3  0.3      0.5      0       
+node 100   coords 3  0.3      0.6      0       
+node 101   coords 3  0.3      0.7      0       
+node 102   coords 3  0.3      0.8      0       
+node 103   coords 3  0.3      0.9      0       
+node 104   coords 3  0.2      0.1      0       
+node 105   coords 3  0.2      0.2      0       
+node 106   coords 3  0.2      0.3      0       
+node 107   coords 3  0.2      0.4      0       
+node 108   coords 3  0.2      0.5      0       
+node 109   coords 3  0.2      0.6      0       
+node 110   coords 3  0.2      0.7      0       
+node 111   coords 3  0.2      0.8      0       
+node 112   coords 3  0.2      0.9      0       
+node 113   coords 3  0.1      0.1      0       
+node 114   coords 3  0.1      0.2      0       
+node 115   coords 3  0.1      0.3      0       
+node 116   coords 3  0.1      0.4      0       
+node 117   coords 3  0.1      0.5      0       
+node 118   coords 3  0.1      0.6      0       
+node 119   coords 3  0.1      0.7      0       
+node 120   coords 3  0.1      0.8      0       
+node 121   coords 3  0.1      0.9      0       
+PlaneStress2DXFEM 41    nodes 4   2   13  41  14  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 42    nodes 4   14  41  42  15  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 43    nodes 4   15  42  43  16  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 44    nodes 4   16  43  44  17  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 45    nodes 4   17  44  45  18  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 46    nodes 4   18  45  46  19  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 47    nodes 4   19  46  47  20  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 48    nodes 4   20  47  48  21  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 49    nodes 4   21  48  49  22  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 50    nodes 4   22  49  23  3   mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 51    nodes 4   13  12  50  41  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 52    nodes 4   41  50  51  42  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 53    nodes 4   42  51  52  43  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 54    nodes 4   43  52  53  44  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 55    nodes 4   44  53  54  45  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 56    nodes 4   45  54  55  46  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 57    nodes 4   46  55  56  47  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 58    nodes 4   47  56  57  48  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 59    nodes 4   48  57  58  49  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 60    nodes 4   49  58  24  23  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 61    nodes 4   12  11  59  50  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 62    nodes 4   50  59  60  51  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 63    nodes 4   51  60  61  52  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 64    nodes 4   52  61  62  53  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 65    nodes 4   53  62  63  54  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 66    nodes 4   54  63  64  55  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 67    nodes 4   55  64  65  56  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 68    nodes 4   56  65  66  57  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 69    nodes 4   57  66  67  58  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 70    nodes 4   58  67  25  24  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 71    nodes 4   11  10  68  59  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 72    nodes 4   59  68  69  60  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 73    nodes 4   60  69  70  61  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 74    nodes 4   61  70  71  62  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 75    nodes 4   62  71  72  63  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 76    nodes 4   63  72  73  64  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 77    nodes 4   64  73  74  65  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 78    nodes 4   65  74  75  66  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 79    nodes 4   66  75  76  67  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 80    nodes 4   67  76  26  25  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 81    nodes 4   10  9   77  68  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 82    nodes 4   68  77  78  69  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 83    nodes 4   69  78  79  70  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 84    nodes 4   70  79  80  71  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 85    nodes 4   71  80  81  72  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 86    nodes 4   72  81  82  73  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 87    nodes 4   73  82  83  74  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 88    nodes 4   74  83  84  75  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 89    nodes 4   75  84  85  76  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 90    nodes 4   76  85  27  26  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 91    nodes 4   9   8   86  77  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 92    nodes 4   77  86  87  78  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 93    nodes 4   78  87  88  79  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 94    nodes 4   79  88  89  80  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 95    nodes 4   80  89  90  81  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 96    nodes 4   81  90  91  82  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 97    nodes 4   82  91  92  83  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 98    nodes 4   83  92  93  84  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 99    nodes 4   84  93  94  85  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 100   nodes 4   85  94  28  27  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 101   nodes 4   8   7   95  86  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 102   nodes 4   86  95  96  87  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 103   nodes 4   87  96  97  88  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 104   nodes 4   88  97  98  89  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 105   nodes 4   89  98  99  90  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 106   nodes 4   90  99  100 91  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 107   nodes 4   91  100 101 92  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 108   nodes 4   92  101 102 93  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 109   nodes 4   93  102 103 94  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 110   nodes 4   94  103 29  28  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 111   nodes 4   7   6   104 95  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 112   nodes 4   95  104 105 96  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 113   nodes 4   96  105 106 97  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 114   nodes 4   97  106 107 98  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 115   nodes 4   98  107 108 99  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 116   nodes 4   99  108 109 100 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 117   nodes 4   100 109 110 101 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 118   nodes 4   101 110 111 102 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 119   nodes 4   102 111 112 103 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 120   nodes 4   103 112 30  29  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 121   nodes 4   6   5   113 104 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 122   nodes 4   104 113 114 105 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 123   nodes 4   105 114 115 106 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 124   nodes 4   106 115 116 107 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 125   nodes 4   107 116 117 108 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 126   nodes 4   108 117 118 109 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 127   nodes 4   109 118 119 110 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 128   nodes 4   110 119 120 111 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 129   nodes 4   111 120 121 112 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 130   nodes 4   112 121 31  30  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 131   nodes 4   5   1   40  113 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 132   nodes 4   113 40  39  114 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 133   nodes 4   114 39  38  115 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 134   nodes 4   115 38  37  116 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 135   nodes 4   116 37  36  117 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 136   nodes 4   117 36  35  118 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 137   nodes 4   118 35  34  119 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 138   nodes 4   119 34  33  120 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 139   nodes 4   120 33  32  121 mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+PlaneStress2DXFEM 140   nodes 4   121 32  4   31  mat 1 crosssect 1 nip 4 nlgeo 0 useplanestrain 1
+SimpleCS 1 thick 1.0 material 1
+#
+#Linear elasticity
+IsoLE 1 d 1.0 E 1.0e6 n 0.3 tAlpha 0.0
+PrescribedGradient 1 dofs 2 1 2 set 1 loadTimeFunction 1 gradient 3 3 {0.0 1.0 0.0; 0.0 0.0 0.0; 0.0 0.0 0.0} 
+#
+ConstantFunction 1 f(t) 1.0
+set 1 elementboundaries 80 131 1 121 1 111 1 101 1 91 1 81 1 71 1 61 1 51 1 41 1 41 4 42 4 43 4 44 4 45 4 46 4 47 4 48 4 49 4 50 4 50 3 60 3 70 3 80 3 90 3 100 3 110 3 120 3 130 3 140 3 140 2 139 2 138 2 137 2 136 2 135 2 134 2 133 2 132 2 131 2 
+nager 1 numberofenrichmentitems 0
