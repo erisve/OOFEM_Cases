@@ -1,0 +1,38 @@
+# ignore any .o and .a files
+*.[oa]
+# ignore any file ending with tilde
+*~
+# ignore all files under targets dir
+targets/
+
+# test results
+*.out
+*.vtu
+*.vtk
+*.pvd
+*.out.*
+*.dat
+
+# documentation aux-files.
+*.aux
+*.log
+*.toc
+*.lof
+*.synctex.gz
+*.run.xml
+*.bcf
+*-blx.bib
+*.blg
+
+
+__pycache__
+*.pyc
+*.swp
+.*.kate-swp
+*.backup
+*kdev*
+makefile
+elixirtest.c
+configure
+config.log
+config.status
