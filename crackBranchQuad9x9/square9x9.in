@@ -221,6 +221,7 @@ XfemManager 1 numberofenrichmentitems 1 debugvtk 1 vtkexport 1 exportfields 1 4
 crack 1 enrichmentdomains 1 1 enrichmentfunction 1 enrichmentdomain 1 enrichmentfront 1
 DiscontinuousFunction 1
 # The crack is described by a piecewise linear polygon.
-polygoncrack 1 points 6 -0.05 1.0 0.5 1.0 1.0 1.0
+polygonline 1 points 6 -0.05 1.0 0.5 1.0 1.0 1.0
 # Specification of the enrichment front
+EnrFrontLinearBranchFuncRadius radius 0.2
 EnrFrontLinearBranchFuncRadius radius 0.2
