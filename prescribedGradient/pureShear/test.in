@@ -262,4 +262,4 @@ PrescribedGradient 1 dofs 2 1 2 set 1 loadTimeFunction 1 gradient 3 3 {0.0 1.0 0
 #
 ConstantFunction 1 f(t) 1.0
 set 1 elementboundaries 80 131 1 121 1 111 1 101 1 91 1 81 1 71 1 61 1 51 1 41 1 41 4 42 4 43 4 44 4 45 4 46 4 47 4 48 4 49 4 50 4 50 3 60 3 70 3 80 3 90 3 100 3 110 3 120 3 130 3 140 3 140 2 139 2 138 2 137 2 136 2 135 2 134 2 133 2 132 2 131 2 
-nager 1 numberofenrichmentitems 0
+xfemmanager 1 numberofenrichmentitems 0
