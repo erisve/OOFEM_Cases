@@ -1,9 +1,9 @@
 test.out
 Test of crack propagation. Written by Erik Svenning, Chalmers University of Technology, April 2015
 #Grid: ../meshes/plate2Holes1mm.unv
-StaticStructural nsteps 100 deltat 1.0 rtolv 1.0e-6 MaxIter 1 minIter 1 lstype 3 smtype 7 nmodules 2 manrmsteps 1
+StaticStructural nsteps 100 deltat 1.0 rtolv 1.0e-6 MaxIter 1 minIter 1 lstype 3 smtype 7 nmodules 1 manrmsteps 1
 vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1
-gnuplot tstep_all reactionforces xfem matforceradii 3 0.5 1.0 2.0 cracklength
+#gnuplot tstep_all reactionforces xfem matforceradii 3 0.5 1.0 2.0 cracklength
 domain 2dPlaneStress
 OutputManager 
 ndofman 251 nelem 418 ncrosssect 1 nmat 1 nbc 2 nic 0 nltf 2 nset 0 nxfemman 1
