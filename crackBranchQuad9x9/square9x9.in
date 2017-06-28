@@ -23,7 +23,7 @@ XFEM simulation of a plate with edge crack.
 #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 # 
 #
-XFEMStatic nsteps 1 deltat 1.0 controlmode 1 rtolv 1.0e-6 MaxIter 20 minIter 2 stiffmode 0 nmodules 1
+StaticStructural nsteps 1 deltat 1.0 rtolv 1.0e-6 MaxIter 20 minIter 2 nmodules 1
 vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1
 domain 2dPlaneStress
 OutputManager tstep_all dofman_all element_all
@@ -209,7 +209,7 @@ PlaneStress2DXfem 114   nodes 4   97  32  31  98  mat 1 crosssect 1 nip 9 nlgeo 
 PlaneStress2DXfem 115   nodes 4   98  31  30  99  mat 1 crosssect 1 nip 9 nlgeo 0
 PlaneStress2DXfem 116   nodes 4   99  30  29  100 mat 1 crosssect 1 nip 9 nlgeo 0
 PlaneStress2DXfem 117   nodes 4   100 29  4   28  mat 1 crosssect 1 nip 9 nlgeo 0
-SimpleCS 1 thick 1.0e-3
+SimpleCS 1 thick 1.0e-3 material 1
 #
 #Linear elasticity
 IsoLE 1 d 0.0 E 1.0e4 n 0.3 tAlpha 0.0
@@ -221,7 +221,7 @@ XfemManager 1 numberofenrichmentitems 1 debugvtk 1 vtkexport 1 exportfields 1 4
 crack 1 enrichmentdomains 1 1 enrichmentfunction 1 enrichmentdomain 1 enrichmentfront 1
 DiscontinuousFunction 1
 # The crack is described by a piecewise linear polygon.
-polygonline 1 points 6 -0.05 1.0 0.5 1.0 1.0 1.0
+polygonline 1 points 6 -0.5 1.0 0.5 1.0 1.0 1.0
 # Specification of the enrichment front
 EnrFrontLinearBranchFuncRadius radius 0.2
 EnrFrontLinearBranchFuncRadius radius 0.2

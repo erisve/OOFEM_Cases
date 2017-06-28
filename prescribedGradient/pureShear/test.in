@@ -27,7 +27,7 @@ Test of prescribed gradient bc. Written by Erik Svenning, Chalmers University of
 #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 # 
 #
-XFEMStatic nsteps 1 deltat 1.0 controlmode 1 rtolv 1.0e-6 MaxIter 40 minIter 2 stiffmode 0 nmodules 2 manrmsteps 1 forceremap 0
+StaticStructural nsteps 1 deltat 1.0 rtolv 1.0e-6 MaxIter 40 minIter 2 nmodules 2 manrmsteps 1 forceremap 0
 vtkxml tstep_all domain_all primvars 1 1 cellvars 1 1
 gnuplot tstep_all reactionforces boundaryconditions
 domain 2dPlaneStress
