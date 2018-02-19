@@ -1,6 +1,6 @@
 testRVE.out
 SVE with hole and smeared crack model in the bulk. Written by Erik Svenning, Chalmers University of Technology, June 2017
-StaticStructural nsteps 1 deltat 1.0 rtolv 1.0e-3 MaxIter 100 minIter 1 lstype 3 smtype 7 nmodules 0 initialguess 0 maxinc 1.0e-1 suppress_output
+StaticStructural nsteps 1 deltat 1.0 rtolv 1.0e-3 MaxIter 100 minIter 1 lstype 3 smtype 7 nmodules 0 initialguess 0 maxinc 1.0e-1 solvertype trustregionsolver3 initialsize 5.0e2 beta 1.0e-10 eig_vec_recalc 100 suppress_output
 #vtkxml tstep_all domain_all primvars 1 1 cellvars 1 81
 #gnuplot tstep_all boundaryconditions
 domain planestrain

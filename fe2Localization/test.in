@@ -1,6 +1,6 @@
 test.out
 Demo of FE2 with localization. Written by Erik Svenning, Chalmers University of Technology, June 2017
-StaticStructural nsteps 11 deltat 0.1 rtolv 1.0e-6 MaxIter 200 minIter 1 nmodules 2 lstype 3 smtype 7 initialguess 1 maxinc 1.0e-1 recomputeaftercrackprop
+StaticStructural nsteps 11 deltat 0.1 rtolv 1.0e-3 MaxIter 200 minIter 1 nmodules 2 lstype 3 smtype 7 initialguess 1 maxinc 1.0e-1 solvertype trustregionsolver4 initialsize 1.0e-3 evtolpert 1.0e2 recomputeaftercrackprop
 vtkxml tstep_step 1 domain_all primvars 1 1 cellvars 3 1 4 81
 gnuplot tstep_all reactionforces
 domain PlaneStrain
